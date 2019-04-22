@@ -3,7 +3,6 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <pthread.h>
-#include <semaphore.h>
 #define QSIZE 20
 char cirQ[QSIZE];
 int cursor=0,finished=0;
@@ -23,7 +22,7 @@ void *producer(void *param){
         while((ch = fgetc(fp)) != EOF){  // EOF=-1
                 cirQ[i%QSIZE] = ch;
 //              nanosleep(&ts, NULL);
-                sleep(1);  // 1 sec sleep
+//                sleep(1);  // 1 sec sleep
                 ++i;
                 ++cursor;
         }
