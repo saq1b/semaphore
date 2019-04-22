@@ -64,7 +64,7 @@ void *consumer2(void *param){
                 while(i<cursor){
 //                      printf("^^^^^^^^^^^^^^^^^^^Iamin^^^^^^^^^^^^^^");
 //                      if(0 == (i+1)%3){
-                        if(!((i+1)%3)){  // ! has more precedence than %(had a hard time finding this bug)
+                        if(!((i+1)%3)){  // ! has more precedence than %
 //                              printf("\n########$$$$$$$%c$$$$#####\n",cirQ[i]);
                                 B[writer++]=cirQ[i];
                         }
@@ -82,7 +82,6 @@ void *consumer2(void *param){
 }
 //FILE *fp;
 int main(int argc, char *argv[]){
-//      i am here to rule
         pthread_t prod_tid, cons1_tid, cons2_tid;
         pthread_attr_t attr;
         pthread_attr_init(&attr);
